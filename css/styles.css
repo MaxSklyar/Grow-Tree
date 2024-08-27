@@ -18,8 +18,10 @@ html, body {
   inset: 0;
   background-size: cover;
   background-position: center;
+  will-change: tranform;
 }
 
 .slider__item {
   overflow: hidden;
+  transform: scale(1.25); !important
 }
