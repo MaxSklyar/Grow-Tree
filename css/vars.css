@@ -2,4 +2,6 @@
   --white-color: #fff;
   --gray-color: #aeb4a6;
   --green-color: rgba(8, 211, 8, 0.952);
+  --index: calc(1vw + 1vh);
+  --transition: ease-in-out;
 }
