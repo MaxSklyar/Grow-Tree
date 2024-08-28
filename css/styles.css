@@ -145,6 +145,11 @@ body {
   margin: 0 2em 0 3em;
 }
 
+.button--main {
+  margin-top: 3em;
+  padding: 1.6em 3.5em;
+}
+
 .button:hover {
   background-color: var(--green-color);
 }
@@ -171,14 +176,8 @@ body {
   line-height: 1;
 }
 
-.header-content__slider {
-  /* position: absolute; */
-}
-
-.header-content__info {
-  top: -18;
-  position: relative;
-  opacity: 0;
+.header-content__slide {
+  position: absolute;
 }
 
 .header-content h1 {
@@ -204,4 +203,40 @@ body {
   margin-left: calc(var(--index) * -2.65);
   right: calc(var(--index) * -2.65);
   opacity: 0;
+  top: -5em;
+  transition: opacity var(--transition), top var(--transition);
+}
+
+.header-content__slide.active .letter {
+  opacity: 1;
+  top: 0;
+}
+
+.header-content__slide.active + * .letter {
+  top: 5em;
+}
+
+.header-content__info {
+  top: -18em;
+  position: relative;
+  opacity: 0;
+  transition: opacity 1s ease, top 1.25s ease;
+}
+
+.header-content__slide.active .header-content__info {
+  opacity: 1;
+  top: 0;
+}
+
+.header-content__slide:has(* + .active .header-content__info),
+.header-content__slide.active + * + .header-content__info {
+  top: 18em;
+}
+
+.slider-ui {
+  pointer-events: none;
+}
+
+.logo, .main-menu, .button, .submenu {
+  pointer-events: auto;
 }
